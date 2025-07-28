@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gas Station</title>
+    <style>
+        @import url("//cdn.web-fonts.ge/fonts/archyedt-bold/css/archyedt-bold.min.css");
+
+        body {
+            font-family: "ArchyEDT-Bold", sans-serif;
+            background-image: url('background.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            background-color: black;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .heading {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            padding: 1.5rem;      
+            text-align: center;
+        }
+
+        .heading h1 {
+            font-size: 3.3rem;
+            margin: 0 0 0.1rem 0;
+            line-height: 1;
+            color: white;
+        }
+
+        .heading p {
+            font-size: 1.3rem;
+            color: #ADA7A7;
+            margin: 0;
+            padding-top: 0rem;
+        }
+
+        .main-container {
+            display: flex;
+            gap: 40px;
+            margin-top: 4rem;
+            align-items: flex-start;
+            margin-left: 0;
+            justify-content: center;
+            width: 100%;
+            max-width: 1600px;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .card {
+            width: 148px;
+            height: 151px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #AFAAAA;
+            font-size: 3.4rem;
+            backdrop-filter: blur(5px);
+            border: 1px solid #FFFFFF;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .sklad-container {
+            display: flex;
+            flex-direction: row; 
+            gap: 20px;
+            position: relative; 
+        }
+
+        .sklad-label {
+            position: absolute;
+            top: -60px; 
+            left: 0;
+            color: white;
+            font-size: 3.5rem;
+            background: linear-gradient(to bottom, #FFFFFF 0%, #99999936 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sklad-card {
+            width: 278px;
+            height: 204px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 7.4rem;
+            backdrop-filter: blur(5px);
+            border: 1px solid #FFFFFF;
+            transition: background-color 0.3s ease;
+        }
+
+        .sklad-card.low {
+            background-color: rgba(255, 0, 0, 0.2);
+        }
+
+        .sklad-card.empty {
+            background-color: rgba(255, 0, 0, 0.4);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .rectangles-container {
+            width: 858px;
+            height: 56px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+            border: 1px solid #FFFFFF;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            margin-top: 20px;
+        }
+
+        .small-rectangle {
+            width: 72px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(2px);
+            border: 1px solid #FFFFFF;
+            margin-right: 10px;
+        }
+
+        .liters-label {
+            color: white;
+            font-size: 1.8rem;
+            margin-left: 5px;
+        }
+
+        .large-rectangles-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .large-rectangle {
+            width: 429px;
+            height: 150px;
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .large-rectangle:first-child {
+            background-color: #FFEA1E;
+        }
+
+        .large-rectangle:last-child {
+            background-color: #486C39;
+        }
+
+        .fuel-type {
+            font-size: 2.9rem;
+            font-weight: bold;
+            margin-bottom: 6px;
+            line-height: 1;
+        }
+
+        .price-info {
+            font-size: 1.5rem;
+            color: #a7a5a5;
+            margin-top: -8px;
+            line-height: 1;
+        }
+
+        .large-rectangle:first-child .fuel-type {
+            color: #000000;
+        }
+
+        .large-rectangle:last-child .fuel-type {
+            color: #FFFFFF;
+        }
+
+        .fuel-info {
+            color: white;
+            font-size: 1.5rem;
+            margin-top: 5px; 
+            text-align: left;
+            width: 858px;
+            padding-left: 1px;
+            margin-bottom: -10px;
+        }
+
+        .fuel-info:first-child {
+            margin-top: 1px; 
+        }
+
+        .fuel-info span {
+            font-weight: bold;
+        }
+
+        .fuel-info:first-child span {
+            color: #EBF356;
+        }
+
+        .fuel-info:last-child span {
+            color: #44CC0C;
+        }
+
+        .choose-text {
+            color: rgba(255, 255, 255, 0.61);
+            font-size: 1.1rem;
+            text-align: left;
+            width: 858px;
+            padding-left: 1px;
+            margin-top: 10px;
+        }
+
+        .fuel-button {
+            width: 881px;
+            height: 90px;
+            background-color: #60D764;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-size: 2rem;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+            font-family: "ArchyEDT-Bold", sans-serif;
+        }
+
+        @media screen and (min-width: 1200px) and (max-width: 1600px) {
+            .main-container {
+                transform: scale(0.9);
+                transform-origin: top center;
+            }
+        }
+
+        @media screen and (min-width: 992px) and (max-width: 1199px) {
+            .main-container {
+                transform: scale(0.8);
+                transform-origin: top center;
+            }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+            .main-container {
+                transform: scale(0.7);
+                transform-origin: top center;
+                margin-top: 2rem;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .main-container {
+                transform: scale(0.6);
+                transform-origin: top center;
+                margin-top: 1rem;
+            }
+            
+            .heading h1 {
+                font-size: 2.5rem;
+            }
+            
+            .heading p {
+                font-size: 1rem;
+            }
+        }
+
+        .small-rectangle.filled {
+            background-color: #60D764;
+            transition: background-color 0.3s ease;
+        }
+
+        .card.active, .large-rectangle.active {
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+
+        .fuel-button:disabled {
+            background-color: #a7a5a5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h1>Gas Station</h1>
+        <p>ბენზინ გასამართ სადგური</p>
+    </div>
+
+    <div class="main-container">
+        <div class="cards-container">
+            <div class="card">10 L</div>
+            <div class="card">25L</div>
+            <div class="card">75L</div>
+            <div class="card">100L</div>
+        </div>
+
+        <div style="display: flex; flex-direction: column;">
+            <div class="sklad-container">
+                <div class="sklad-label">საცავი</div>
+                <div class="sklad-card">1</div>
+                <div class="sklad-card">2</div>
+                <div class="sklad-card">3</div>
+            </div>
+            
+            <div class="rectangles-container">
+                <div class="small-rectangle"></div>
+                <div class="small-rectangle"></div>
+                <div class="small-rectangle"></div>
+                <div class="small-rectangle"></div>
+                <div class="small-rectangle"></div>
+                <div class="small-rectangle"></div>
+                <div class="small-rectangle"></div>
+                <div class="small-rectangle"></div>
+                <div class="small-rectangle"></div>
+                <div class="small-rectangle"></div>
+                <div class="small-rectangle"></div>
+                <div class="liters-label">0L</div>
+            </div>
+
+            <div class="large-rectangles-container">
+                <div class="large-rectangle">
+                    <div class="fuel-type">PREMIUM</div>
+                    <div class="price-info">PER LITER 2.50$</div>
+                </div>
+                <div class="large-rectangle">
+                    <div class="fuel-type">DIESEL</div>
+                    <div class="price-info">PER LITER 2.50$</div>
+                </div>
+            </div>
+            
+            <div class="fuel-info">
+                <span style="color: #EBF356;">პრემიუმ საწვავი</span> ასწრაფებს თქვენს მანქანას 10%-ით
+            </div>
+            <div class="fuel-info">
+                <span style="color: #44CC0C;">DIESEL საწვავი</span> არ ასწრაფებს თქვენს მანქანას 10%-ით
+            </div>
+            <div class="choose-text">აირჩიე საწვავის რაოდენობა და იმგზავრე იაფად</div>
+            <button class="fuel-button">ბენზინის ჩასხმა</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fuelButton = document.querySelector('.fuel-button');
+            const smallRectangles = document.querySelectorAll('.small-rectangle');
+            const litersLabel = document.querySelector('.liters-label');
+            const cardButtons = document.querySelectorAll('.card');
+            const fuelTypeButtons = document.querySelectorAll('.large-rectangle');
+            const skladCards = document.querySelectorAll('.sklad-card');
+            
+            // Initial fuel amount (represented as 3 digits)
+            let totalFuel = 123; // Starting with 123 liters
+            
+            // Update storage display - each card shows one digit of the total fuel amount
+            function updateStorageDisplay() {
+                // Convert total fuel to string to get individual digits
+                const fuelStr = totalFuel.toString().padStart(3, '0');
+                
+                // Update each card with its corresponding digit
+                for (let i = 0; i < 3; i++) {
+                    if (i < fuelStr.length) {
+                        skladCards[i].textContent = fuelStr[i];
+                    } else {
+                        skladCards[i].textContent = '0';
+                    }
+                }
+                
+                // Visual indicator if fuel is low
+                if (totalFuel <= 50) {
+                    skladCards.forEach(card => card.classList.add('low'));
+                } else {
+                    skladCards.forEach(card => card.classList.remove('low'));
+                }
+                
+                // Visual indicator if fuel is empty
+                if (totalFuel <= 0) {
+                    skladCards.forEach(card => card.classList.add('empty'));
+                } else {
+                    skladCards.forEach(card => card.classList.remove('empty'));
+                }
+            }
+            
+            // Initialize displays
+            updateStorageDisplay();
+            
+            let isDispensing = false;
+            let selectedLiters = 0;
+            let filledRectangles = 0;
+            let selectedFuelType = ''; 
+            let dispensingInterval;
+            
+            function addActiveClass(elements, selectedElement) {
+                elements.forEach(element => {
+                    element.classList.remove('active');
+                });
+                selectedElement.classList.add('active');
+            }
+            
+            cardButtons.forEach(card => {
+                card.addEventListener('click', function() {
+                    if (isDispensing) return;
+                    
+                    selectedLiters = parseInt(this.textContent);
+                    addActiveClass(cardButtons, this);
+                    updateFuelButton();
+                });
+            });
+            
+            fuelTypeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    if (isDispensing) return; 
+                    
+                    selectedFuelType = this.querySelector('.fuel-type').textContent.toLowerCase();
+                    addActiveClass(fuelTypeButtons, this);
+                    updateFuelButton();
+                });
+            });
+            
+            function updateFuelButton() {
+                if (selectedLiters > 0 && selectedFuelType) {
+                    // Check if enough fuel is available
+                    if (totalFuel >= selectedLiters) {
+                        fuelButton.disabled = false;
+                        fuelButton.textContent = `ბენზინის ჩასხმა - ${selectedLiters}L ${selectedFuelType}`;
+                    } else {
+                        fuelButton.disabled = true;
+                        fuelButton.textContent = `არასაკმარისი საწვავი`;
+                    }
+                } else {
+                    fuelButton.disabled = true;
+                    fuelButton.textContent = 'აირჩიეთ საწვავის ტიპი და რაოდენობა';
+                }
+            }
+            
+            function resetDispensing() {
+                smallRectangles.forEach(rect => {
+                    rect.classList.remove('filled');
+                });
+                filledRectangles = 0;
+                litersLabel.textContent = '0L';
+                isDispensing = false;
+                updateFuelButton();
+            }
+            
+            fuelButton.addEventListener('click', function() {
+                if (isDispensing) return;
+                if (!selectedLiters || !selectedFuelType) {
+                    alert('აირჩიეთ საწვავის ტიპი და რაოდენობა');
+                    return;
+                }
+                
+                // Check if we have enough fuel - removed the problematic fuelTanks reference
+                if (totalFuel < selectedLiters) {
+                    alert('არასაკმარისი საწვავი საცავში!');
+                    return;
+                }
+                
+                isDispensing = true;
+                fuelButton.disabled = true;
+                fuelButton.textContent = 'მიმდინარეობს ჩასხმა...';
+                
+                resetDispensing();
+                
+                const totalRectangles = smallRectangles.length;
+                const fillInterval = (selectedLiters / totalRectangles) * 100; 
+                let currentLiters = 0;
+                
+                litersLabel.textContent = '0L';
+                
+                // Simulate dispensing
+                dispensingInterval = setInterval(() => {
+                    if (filledRectangles >= totalRectangles) {
+                        clearInterval(dispensingInterval);
+                        
+                        // Reduce total fuel amount
+                        totalFuel -= selectedLiters;
+                        if (totalFuel < 0) totalFuel = 0;
+                        
+                        // Update storage display
+                        updateStorageDisplay();
+                        
+                        fuelButton.textContent = 'დასრულებულია!';
+                        
+                        setTimeout(() => {
+                            resetDispensing();
+                        }, 3000);
+                        return;
+                    }
+                    
+                    smallRectangles[filledRectangles].classList.add('filled');
+                    filledRectangles++;
+                    
+                    currentLiters = Math.floor((filledRectangles / totalRectangles) * selectedLiters);
+                    litersLabel.textContent = currentLiters + 'L';
+                    
+                }, fillInterval);
+            });
+            
+            // Initial button state
+            updateFuelButton();
+        });
+    </script>
+</body>
+</html>
