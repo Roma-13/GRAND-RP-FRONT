@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24/7 Supermarket</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="market-ui-container">
+        <button class="close-button">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="sidebar">
+            <div class="logo-container">
+                <img src="image-Photoroom 1.png" alt="247" class="logo">
+            </div>
+            
+            <div class="menu-section">
+                <div class="menu-title">მენიუ</div>
+                <div class="menu-item active" data-category="food">
+                    <i class="fas fa-utensils"></i>
+                    <span>პროდუქტები</span>
+                </div>
+                <div class="menu-item" data-category="drinks">
+                    <i class="fas fa-wine-glass-alt"></i>
+                    <span>სასმელები</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="products-section">
+                <div class="section-header">
+                    <div>
+                        <h1 class="section-title">24/7 მაღაზია</h1>
+                        <p class="section-subtitle">აირჩიეთ თქვენი სასურველი პროდუქტი</p>
+                    </div>
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" class="search-input" placeholder="ძიება...">
+                    </div>
+                </div>
+                
+                <div class="products-categories" id="categories-container">
+                    <div class="category-pill active" data-category="all">ყველა</div>
+                    <div class="category-pill" data-category="classic">კლასიკური</div>
+                    <div class="category-pill" data-category="frozen">გაყინული</div>
+                    <div class="category-pill" data-category="meat">ხორცი</div>
+                </div>
+                
+                <div class="products-grid" id="products-container">
+                </div>
+            </div>
+            
+            <div class="cart-container">
+                <div class="cart-header">
+                    <h2 class="cart-title">თქვენი კალათი</h2>
+                    <p class="cart-subtitle">0 პროდუქტი დამატებულია</p>
+                </div>
+                
+                <div class="cart-items">
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-basket"></i>
+                        <p>თქვენი კალათი ცარიელია</p>
+                    </div>
+                </div>
+                
+                <div class="cart-footer">
+                    <div class="cart-summary">
+                        <div class="summary-row">
+                            <span>პროდუქტები</span>
+                            <span class="products-total">$0.00</span>
+                        </div>
+                        
+                        <div class="summary-row total">
+                            <span>სულ</span>
+                            <span class="grand-total">$0.00</span>
+                        </div>
+                    </div>
+                    
+                    <button class="checkout-button" disabled>
+                        <i class="fas fa-credit-card"></i>
+                        ბარათით
+                    </button>
+                    <button class="checkout-button-cash" disabled>
+                        <i class="fas fa-money-bill-alt"></i>
+                        ხელზე
+                    </button>
+                    <button class="cancel-button clear-cart">
+                        კალათის გასუფთავება
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

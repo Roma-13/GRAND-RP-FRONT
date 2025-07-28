@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Genuine Iphone</title>
+    <style>
+        .ytmusic-app {
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            padding: 20px;
+        }
+        
+        .ytmusic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .ytmusic-play-button {
+            width: 32px;
+            height: 32px;
+            background-color: #ff0000;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+        }
+        
+        .ytmusic-play-icon {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 7px 0 7px 12px;
+            border-color: transparent transparent transparent #ffffff;
+            margin-left: 3px;
+        }
+        
+        .ytmusic-music-text {
+            color: white;
+            font-weight: bold;
+            font-size: 22px;
+        }
+        
+        .ytmusic-title {
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .ytmusic-subtitle {
+            color: #fffafa;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        
+        .ytmusic-description {
+            color: white;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .ytmusic-search-input {
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 15px;
+            color: white;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .ytmusic-download-button {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .taxi-app {
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            color: white;
+            padding: 20px;
+        }
+        
+        .logo-text {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .logo-text h1 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .genuine {
+            font-size: 35px;
+            color: white;
+        }
+        
+        .taxi {
+            font-size: 35px;
+            color: #ffc107;
+        }
+        
+        .georgian-text-img {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .georgian-text-img img {
+            max-width: 80%;
+            height: auto;
+        }
+        
+        .illustration {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            flex: 1;
+            position: relative;
+            height: 200px;
+        }
+        
+        .car-image {
+            position: absolute;
+            bottom: 20px;
+            z-index: 1;
+        }
+        
+
+
+        
+        .taxi-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #ffc107;
+            color: #000;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="iphone">
+        <div class="face">
+            <div class="forelock">
+                <div class="speaker"></div>
+                <div class="camera">
+                    <div class="camera-dot"></div>
+                </div>
+            </div>
+            <div class="screen wallpaper">
+                <div class="status-bar dark">
+                    <div class="bar">
+                        <div class="time">20:50</div>
+                        <div class="status-icons">
+                            <div class="icon service-icon" data-state="4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 8">
+                                    <path d="M12.365 0h.835a.781.781 0 0 1 .8.762v6.476a.781.781 0 0 1-.8.762h-.835a.781.781 0 0 1-.8-.762v-6.476a.781.781 0 0 1 .8-.762z"/>
+                                    <path d="M8.51 1.714h.835a.781.781 0 0 1 .8.762v4.762a.781.781 0 0 1-.8.762h-.835a.782.782 0 0 1-.8-.762v-4.762a.782.782 0 0 1 .8-.762z"/>
+                                    <path d="M4.655 3.614h.835a.782.782 0 0 1 .8.762v2.862a.782.782 0 0 1-.8.762h-.835a.781.781 0 0 1-.8-.762v-2.857a.781.781 0 0 1 .8-.762z"/>
+                                    <path d="M.8 5.143h.835a.781.781 0 0 1 .8.762v1.333a.781.781 0 0 1-.8.762h-.835a.781.781 0 0 1-.8-.762v-1.338a.781.781 0 0 1 .8-.757z"/>
+                                </svg>
+                            </div>
+                            <div class="icon battery-icon" data-battery-percent="100">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 9" height="9" width="20">
+                                    <g>
+                                        <path d="M2.062.001a2.021 2 0 0 0-2.062 1.957v5.085a2.021 2 0 0 0 2.062 1.957h14.02a2.021 2 0 0 0 2.062-1.957v-5.085a2.021 2 0 0 0-2.062-1.957zm0 .783h14.02a1.212 1.2 0 0 1 1.237 1.174v5.085a1.212 1.2 0 0 1-1.237 1.174h-14.02a1.212 1.2 0 0 1-1.237-1.174v-5.085a1.212 1.2 0 0 1 1.237-1.174zM18.97 2.611a1.938 1.918 0 0 1 0 3.389z"/>
+                                    </g>
+                                    <rect x="1.633" y="1.565" rx=".799" height="5.87" width="14.694"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app lockscreen" id="lockScreen">
+                    <div class="container">
+                        <div class="lock-status">
+                            <div class="icon">
+                                <img src="assets/lockscreen/lock.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="datetime">
+                            <div class="time">20:50</div>
+                            <div class="date">პარასკევი , 18 აპრილი</div>
+                        </div>
+                        <ul class="notifications">
+                            <li class="notification">
+                                <div class="header">
+                                    <div class="icon">
+                                        <img src="assets/apps_icons/message.svg" alt="">
+                                    </div>
+                                    <div class="title">შეტყობინება</div>
+                                    <div class="age">1 წუთის წინ</div>
+                                </div>
+                                <div class="body">
+                                    <p>კეთილი იყოს თქვენი მობრძანება Genuine Role Play- ზე</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="quick-actions">
+                        <div class="button">
+                            <div class="icon">
+                                <img src="assets/lockscreen/quick_actions/navigation.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="button">
+                            <div class="icon">
+                                <img src="assets/lockscreen/quick_actions/camera.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app homescreen" id="homeScreen" style="display:none;">
+                    <div class="container">
+                        <div class="apps">
+                            <div class="app-wrapper">
+                                <a href="" class="app">
+                                    <div class="icon">
+                                        <img src="assets/apps_icons/bank.png" alt="">
+                                    </div>
+                                    <div class="title">Bank</div>
+                                </a>
+                            </div>
+                            <div class="app-wrapper">
+                                <a href="#" id="openTaxi" class="app">
+                                    <div class="icon">
+                                        <img src="assets/apps_icons/taxi.png" alt="">
+                                    </div>
+                                    <div class="title">Taxi</div>
+                                </a>
+                            </div>
+                            <div class="app-wrapper">
+                                <a href="#" id="openNavigator" class="app">
+                                    <div class="icon">
+                                        <img src="assets/apps_icons/maps.png" alt="">
+                                    </div>
+                                    <div class="title">Map</div>
+                                </a>
+                            </div>
+                            <div class="app-wrapper">
+                                <a href="#" id="openYtMusic" class="app">
+                                    <div class="icon">
+                                        <img src="assets/apps_icons/ytmusic.png" alt="">
+                                    </div>
+                                    <div class="title">YtMusic</div>
+                                </a>
+                            </div>
+                            <div class="app-wrapper">
+                                <a href="" class="app">
+                                    <div class="icon">
+                                        <img src="assets/apps_icons/auto.png" alt="">
+                                    </div>
+                                    <div class="title">Autosalon</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="screen-dots">
+                        <li class="active"></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <div class="dock">
+                        <ul class="dock-apps">
+                            <li class="app">
+                                <a href="#" class="icon" id="openPhone">
+                                    <img src="assets/apps_icons/phone.svg" alt="Phone">
+                                </a>
+                            </li>
+                            <li class="app">
+                                <a href="" class="icon">
+                                    <img src="assets/apps_icons/safari.svg" alt="Browser">
+                                </a>
+                            </li>
+                            <li class="app">
+                                <a href="" class="icon">
+                                    <img src="assets/apps_icons/message.svg" alt="Messages">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="app phone" id="phoneApp" style="display:none;">
+                    <div class="container">
+                        <div class="number-wrapper">
+                            <input type="number" class="number" value="">
+                        </div>
+                        <div class="add-number">
+                        </div>
+                        <div class="keypad">
+                            <div class="key">
+                                <div class="digit">1</div>
+                                <div class="chars"></div>
+                            </div>
+                            <div class="key">
+                                <div class="digit">2</div>
+                                <div class="chars">ABC</div>
+                            </div>
+                            <div class="key">
+                                <div class="digit">3</div>
+                                <div class="chars">DEF</div>
+                            </div>
+                            <div class="key">
+                                <div class="digit">4</div>
+                                <div class="chars">GHI</div>
+                            </div>
+                            <div class="key">
+                                <div class="digit">5</div>
+                                <div class="chars">JKL</div>
+                            </div>
+                            <div class="key">
+                                <div class="digit">6</div>
+                                <div class="chars">MNO</div>
+                            </div>
+                            <div class="key">
+                                <div class="digit">7</div>
+                                <div class="chars">PQRS</div>
+                            </div>
+                            <div class="key">
+                                <div class="digit">8</div>
+                                <div class="chars">TUV</div>
+                            </div>
+                            <div class="key">
+                                <div class="digit">9</div>
+                                <div class="chars">WXYZ</div>
+                            </div>
+                            <div class="key asterisk">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.967 15.131">
+                                        <path d="M12.95 12.291l1.018-1.846-5.348-2.859 5.348-2.88-1.018-1.866-5.15 3.346.241-6.186h-2.115l.239 6.186-5.127-3.346-1.038 1.866 5.368 2.88-5.368 2.88 1.038 1.825 5.128-3.306-.239 6.146h2.114l-.241-6.126z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="key zero">
+                                <div class="digit">0</div>
+                                <div class="chars">+</div>
+                            </div>
+                            <div class="key hashtag">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
+                                        <path d="M5.385 3.462h4.615v-3.462h1.923v3.462h3.077v1.923h-3.077v4.615h3.077v1.923h-3.077v3.077h-1.923v-3.077h-4.615v3.077h-1.923v-3.077h-3.462v-1.923h3.462v-4.615h-3.462v-1.923h3.462v-3.462h1.923v3.462z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="key inactive"></div>
+                            <div class="key call">
+                                <div class="icon">
+                                    <img src="assets/callscreen/phone_icon.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="key backspace">
+                                <div class="icon">
+                                    <img src="assets/phone/backspace.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navigation">
+                        <ul class="navigation-tabs">
+                            <li class="tab">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 19">
+                                        <path d="M16.5 19a.819.819 0 0 1-.462-.141l-5.538-3.759-5.538 3.759a.828.828 0 0 1-.928 0 .729.729 0 0 1-.289-.835l2.065-6.154-5.487-3.831a.729.729 0 0 1-.285-.839.771.771 0 0 1 .749-.5h6.813l2.148-6.186a.807.807 0 0 1 1.5 0l2.152 6.192h6.814a.771.771 0 0 1 .749.5.73.73 0 0 1-.284.837l-5.488 3.828 2.065 6.154a.729.729 0 0 1-.289.835.821.821 0 0 1-.467.14"/>
+                                    </svg>
+                                </div>
+                                <div class="title">ფავორიტი</div>
+                            </li>
+                            <li class="tab">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                                        <path d="M10.26 10.26v-7.22a.381.381 0 0 0-.38-.38h-.38a.381.381 0 0 0-.38.38v6.84h-4.56a.381.381 0 0 0-.38.38v.38a.381.381 0 0 0 .38.38h5.32a.381.381 0 0 0 .38-.38zm-.76-10.26a9.5 9.5 0 1 1-9.5 9.5 9.5 9.5 0 0 1 9.5-9.5z"/>
+                                    </svg>
+                                </div>
+                                <div class="title">ზარები</div>
+                            </li>
+                            <li class="tab">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 17">
+                                        <path d="M9.191 16.998c.354-2.2 1.205-2.671 1.839-3.022 1.278-.707 2.612-.45 3.677-1.322a2.114 2.114 0 0 0 .71-1.63 4.965 4.965 0 0 1-2.5-.971.511.511 0 0 1-.166-.5l.59-2.583a3.183 3.183 0 0 0 .082-.721v-2.091c0-2.266.919-3.211 1.654-3.211a2.609 2.609 0 0 1 1.1.189l.549-.282a1.545 1.545 0 0 1 .388-.142c3.391-.7 3.568 3.6 3.514 5.267a3.2 3.2 0 0 0 .229 1.3l.876 2.186a.509.509 0 0 1-.18.612 6.63 6.63 0 0 1-2.776.954 2.108 2.108 0 0 0 .709 1.625c1.065.872 2.4.615 3.677 1.322.634.351 1.485.826 1.839 3.022zm-9.191 0c.378-2.2.735-3.022 1.966-3.778 1.314-.806 2.795-.45 3.933-1.322a1.823 1.823 0 0 0 .7-1.156c-.8-.788-.695-2.215-1.449-3.378v-.006a.948.948 0 0 1-.368-.749v-.756a.956.956 0 0 1 .258-.653c-.039-.669-.074-1.3-.074-1.614a3.494 3.494 0 1 1 6.985 0c0 .312-.035.945-.074 1.614a.956.956 0 0 1 .257.653v.756a.947.947 0 0 1-.367.749v.006c-.25 1.158-.5 2.579-1.451 3.367a1.825 1.825 0 0 0 .7 1.166 3 3 0 0 0 .711.4 5.67 5.67 0 0 0-1.3.513c-.987.546-2.075 1.348-2.5 3.97l-.035.216z"/>
+                                    </svg>
+                                </div>
+                                <div class="title">კონტაქტები</div>
+                            </li>
+                            <li class="tab active">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+                                        <path d="M13.124 15.563a2.438 2.438 0 1 1 2.438 2.437 2.438 2.438 0 0 1-2.438-2.437zm-6.561 0a2.437 2.437 0 1 1 2.438 2.437 2.437 2.437 0 0 1-2.437-2.437zm-6.562 0a2.438 2.438 0 1 1 2.437 2.437 2.438 2.438 0 0 1-2.436-2.437zm13.124-6.563a2.438 2.438 0 1 1 2.438 2.437 2.437 2.437 0 0 1-2.438-2.437zm-6.561 0a2.437 2.437 0 1 1 2.437 2.437 2.437 2.437 0 0 1-2.436-2.437zm-6.561 0a2.438 2.438 0 1 1 2.437 2.437 2.437 2.437 0 0 1-2.437-2.437zm13.124-6.563a2.438 2.438 0 1 1 2.438 2.438 2.438 2.438 0 0 1-2.439-2.438zm-6.561 0a2.437 2.437 0 1 1 2.437 2.438 2.437 2.437 0 0 1-2.437-2.438zm-6.562 0a2.438 2.438 0 1 1 2.437 2.438 2.438 2.438 0 0 1-2.437-2.438z"/>
+                                    </svg>
+                                </div>
+                                <div class="title">კლავიატურა</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="app navigator" id="navigatorApp" style="display:none;">
+                    <div class="container">
+                        <div class="title-bar">
+                            <div class="title">ნავიგატორი</div>
+                            <div class="control add">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+                                        <path d="M8 0h2v18h-2zM0 8h18v2h-18z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search-bar">
+                            <div class="input-group">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 11">
+                                        <path d="M4.337 7.885a3.549 3.549 0 1 0-3.548-3.549 3.548 3.548 0 0 0 3.548 3.549zm2.701-.155a4.337 4.337 0 1 1 .693-.693a.502.502 0 0 1 .123.091l3.011 3.011a.513.513 0 0 1-.725.725l-3.011-3.011a.502.502 0 0 1-.091-.123z"/>
+                                    </svg>
+                                </div>
+                                <input type="text" placeholder="ძებნა">
+                            </div>
+                        </div>
+                        <div class="navigator-bar-wrapper">
+                            <div class="navigator-bar">
+                                <ul class="navs">
+                                    <li class="nav active">მთავარი</li>
+                                    <li class="nav">სახლი</li>
+                                    <li class="nav">ბიზნესები</li>
+                                    <li class="nav">ფრაქციები</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="workspace">
+                            <div class="navigator-item-wrapper">
+                                <div class="navigator-item">
+                                    <div class="title">მერია</div>
+                                </div>
+                            </div>
+                            <div class="navigator-item-wrapper">
+                                <div class="navigator-item">
+                                    <div class="title">პოლიციის დეპარტამენტი.</div>
+                                    <div class="distance">2.2 კმ</div>
+                                    <div class="mark-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
+                                            <circle cx="13" cy="13" r="13"/>
+                                            <path d="M12.999 5.978a5.092 5.092 0 0 0-5.086 5.086c0 3.481 4.552 8.59 4.746 8.806a.458.458 0 0 0 .682 0c.194-.216 4.746-5.326 4.746-8.806a5.092 5.092 0 0 0-5.088-5.086zm0 7.646a2.559 2.559 0 1 1 2.559-2.559 2.562 2.562 0 0 1-2.559 2.559z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="navigator-item-wrapper">
+                                <div class="navigator-item">
+                                    <div class="title">სამედიცინო ცენტრი</div>
+                                </div>
+                            </div>
+                            <div class="navigator-item-wrapper">
+                                <div class="navigator-item">
+                                    <div class="title">სატვირთო</div>
+                                </div>
+                            </div>
+                            <div class="navigator-item-wrapper">
+                                <div class="navigator-item">
+                                    <div class="title">ფერმა</div>
+                                </div>
+                            </div>
+                            <div class="navigator-item-wrapper">
+                                <div class="navigator-item">
+                                    <div class="title">ლიცენზიის ცენტრი</div>
+                                </div>
+                            </div>
+                            <div class="navigator-item-wrapper">
+                                <div class="navigator-item">
+                                    <div class="title">ბანკი</div>
+                                </div>
+                            </div>
+                            <div class="navigator-item-wrapper">
+                                <div class="navigator-item">
+                                    <div class="title">ავტომობილის ქირაობა</div>
+                                </div>
+                            </div>
+                            <div class="navigator-item-wrapper">
+                                <div class="navigator-item">
+                                    <div class="title">მაღაზია 24/7</div>
+                                </div>
+                            </div>
+                            <div class="navigator-item-wrapper">
+                                <div class="navigator-item">
+                                    <div class="title">ავტოსალონი №1</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app ytmusic-app" id="ytMusicApp" style="display:none;">
+                    <div class="ytmusic-header">
+                        <div class="ytmusic-play-button">
+                            <div class="ytmusic-play-icon"></div>
+                        </div>
+                        <div class="ytmusic-music-text">MUSIC</div>
+                    </div>
+                    
+                    <h1 class="ytmusic-title">YOUTUBE</h1>
+                    <h2 class="ytmusic-subtitle">მუსიკა</h2>
+                    
+                    <p class="ytmusic-description">ჩამოტვირთეთ MP3 აუდიოს ლინკი და ჩაწერე აქ</p>
+                    
+                    <input type="text" class="ytmusic-search-input" placeholder="ლინკი">
+                    
+                    <button class="ytmusic-download-button">ჩართვა</button>
+                </div>
+
+                <div class="app taxi-app" id="taxiApp" style="display:none;">
+                    <div class="content">
+                        <div class="logo-text">
+                            <h1><span class="genuine">GENUINE</span> TA<span class="taxi">XI </h1>
+                            </div>
+                        <div class="georgian-text-img">
+                            <h1>იმგზავრე</h1>
+                            <p>სწრაფად და კომფორტულად</p>
+                        </div>
+                        <div class="illustration">
+                            <img src="Frame 546471262.png" alt="Taxi Car" class="car-image">
+                        </div>
+                        
+                        <button class="taxi-button">გამოძახება</button>
+                    </div>
+                </div>
+
+                <div class="home-button-zone dark">
+                    <div class="home-button-wrapper">
+                        <div class="home-button" id="homeButton"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const lockScreen = document.getElementById('lockScreen');
+            const homeScreen = document.getElementById('homeScreen');
+            const phoneApp = document.getElementById('phoneApp');
+            const navigatorApp = document.getElementById('navigatorApp');
+            const ytMusicApp = document.getElementById('ytMusicApp');
+            const taxiApp = document.getElementById('taxiApp');
+            const homeButton = document.getElementById('homeButton');
+            const openPhone = document.getElementById('openPhone');
+            const openNavigator = document.getElementById('openNavigator');
+            const openYtMusic = document.getElementById('openYtMusic');
+            const openTaxi = document.getElementById('openTaxi');
+            
+            function updateDateTime() {
+                const now = new Date();
+                
+                let hours = now.getHours();
+                let minutes = now.getMinutes();
+                
+                hours = hours < 10 ? '0' + hours : hours;
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                
+                const timeString = `${hours}:${minutes}`;
+                
+                const daysGeorgian = ['კვირა', 'ორშაბათი', 'სამშაბათი', 'ოთხშაბათი', 'ხუთშაბათი', 'პარასკევი', 'შაბათი'];
+                const dayOfWeek = daysGeorgian[now.getDay()];
+                
+                const monthsGeorgian = ['იანვარი', 'თებერვალი', 'მარტი', 'აპრილი', 'მაისი', 'ივნისი', 
+                                      'ივლისი', 'აგვისტო', 'სექტემბერი', 'ოქტომბერი', 'ნოემბერი', 'დეკემბერი'];
+                const month = monthsGeorgian[now.getMonth()];
+                
+                const date = now.getDate();
+                const dateString = `${dayOfWeek}, ${date} ${month}`;
+                
+                const timeElements = document.querySelectorAll('.time');
+                timeElements.forEach(element => {
+                    element.textContent = timeString;
+                });
+                
+                const dateElement = document.querySelector('.date');
+                if (dateElement) {
+                    dateElement.textContent = dateString;
+                }
+            }
+            
+            updateDateTime();
+            
+            setInterval(updateDateTime, 60000);
+            
+            function hideAllScreens() {
+                lockScreen.style.display = 'none';
+                homeScreen.style.display = 'none';
+                phoneApp.style.display = 'none';
+                navigatorApp.style.display = 'none';
+                ytMusicApp.style.display = 'none';
+                taxiApp.style.display = 'none';
+            }
+            
+            homeButton.addEventListener('click', function() {
+                if (lockScreen.style.display !== 'none') {
+                    hideAllScreens();
+                    homeScreen.style.display = 'block';
+                } 
+                else if (homeScreen.style.display === 'none') {
+                    hideAllScreens();
+                    homeScreen.style.display = 'block';
+                }
+            });
+            
+            openPhone.addEventListener('click', function(e) {
+                e.preventDefault();
+                hideAllScreens();
+                phoneApp.style.display = 'block';
+            });
+            
+            openNavigator.addEventListener('click', function(e) {
+                e.preventDefault();
+                hideAllScreens();
+                navigatorApp.style.display = 'block';
+            });
+            
+            openYtMusic.addEventListener('click', function(e) {
+                e.preventDefault();
+                hideAllScreens();
+                ytMusicApp.style.display = 'flex';
+            });
+
+            openTaxi.addEventListener('click', function(e) {
+                e.preventDefault();
+                hideAllScreens();
+                taxiApp.style.display = 'flex';
+            });
+
+            const searchInput = document.querySelector('.navigator .search-bar input');
+            const navigatorItems = document.querySelectorAll('.navigator-item-wrapper');
+
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+                    
+                    navigatorItems.forEach(item => {
+                        const title = item.querySelector('.title').textContent.toLowerCase();
+                        if (title.includes(searchTerm)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            const ytMusicSearchInput = document.querySelector('.ytmusic-search-input');
+            const ytMusicDownloadButton = document.querySelector('.ytmusic-download-button');
+
+            if (ytMusicDownloadButton) {
+                ytMusicDownloadButton.addEventListener('click', function() {
+                    const url = ytMusicSearchInput.value.trim();
+                    
+                    if (!url) {
+                        alert('გთხოვთ შეიყვანოთ YouTube ლინკი');
+                        return;
+                    }
+                    
+                    if (!url.includes('youtube.com') && !url.includes('youtu.be')) {
+                        alert('არასწორი YouTube ლინკი! გთხოვთ შეიყვანოთ მხოლოდ YouTube ლინკები.');
+                        return;
+                    }
+                    
+                    ytMusicDownloadButton.textContent = 'იტვირთება...';
+                    ytMusicDownloadButton.disabled = true;
+                    
+                    setTimeout(() => {
+                        ytMusicDownloadButton.textContent = 'ჩაირთვა';
+                        ytMusicDownloadButton.disabled = false;
+                        
+                        alert('მუსიკა წარმატებით ჩაირთო!');
+                        
+                        ytMusicSearchInput.value = '';
+                    }, 2000);
+                });
+            }
+
+            if (ytMusicSearchInput) {
+                ytMusicSearchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        ytMusicDownloadButton.click();
+                    }
+                });
+            }
+            
+            const navTabs = document.querySelectorAll('.navigator-bar .nav');
+            if (navTabs) {
+                navTabs.forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        navTabs.forEach(t => t.classList.remove('active'));
+                        
+                        this.classList.add('active');
+                        
+
+                        console.log('Navigator tab clicked:', this.textContent);
+                    });
+                });
+            }
+            
+            const numberInput = document.querySelector(".number");
+            const keys = document.querySelectorAll(".key:not(.call):not(.backspace):not(.inactive)");
+            const backspaceKey = document.querySelector(".key.backspace");
+            const callKey = document.querySelector(".key.call");
+            
+            keys.forEach(key => {
+                key.addEventListener("click", () => {
+                    const digit = key.querySelector(".digit");
+                    const chars = key.querySelector(".chars");
+                    
+                    if (digit) {
+                        numberInput.value += digit.textContent;
+                    } else if (chars) {
+                        numberInput.value += chars.textContent;
+                    }
+                });
+            });
+            
+            backspaceKey.addEventListener("click", () => {
+                numberInput.value = numberInput.value.slice(0, -1);
+            });
+            
+            callKey.addEventListener("click", () => {
+                if (numberInput.value) {
+                    alert(`Calling ${numberInput.value}...`);
+                } else {
+                    alert("Please enter a number first.");
+                }
+            });
+            
+            const navBar = document.querySelector('.navigator-bar .navs');
+            if (navBar) {
+                function scrollHorizontally(e) {
+                    e = window.event || e;
+                    const delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+                    navBar.scrollLeft -= (delta * 40);
+                    e.preventDefault();
+                }
+                
+                navBar.addEventListener('mousewheel', scrollHorizontally, false);
+            }
+
+            const taxiButton = document.querySelector('.taxi-button');
+            if (taxiButton) {
+                taxiButton.addEventListener('click', function() {
+                    this.textContent = 'იძებნება მძღოლი...';
+                    setTimeout(() => {
+                        this.textContent = 'გამოძახება';
+                        alert('თქვენი მოთხოვნა მიღებულია! მძღოლი მალე დაგიკავშირდებათ.');
+                    }, 2000);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
